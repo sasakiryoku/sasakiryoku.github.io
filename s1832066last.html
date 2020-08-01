@@ -24,7 +24,7 @@
         const scene = new THREE.Scene();
 
         // フォグを設定
-        scene.fog = new THREE.Fog(0x000000, 50, 6000);
+        scene.fog = new THREE.Fog(0x000000, 50, 10000);
 
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
@@ -33,14 +33,14 @@
         // グループを作成
         const group = new THREE.Group();
         scene.add(group);
-        const geometry = new THREE.SphereGeometry(30, 5, 30);
+        const geometry = new THREE.SphereGeometry(5, 5, 5);
         const loader = new THREE.TextureLoader();
 　　　　  const texture = loader.load('snow.jpg');
         const material = new THREE.MeshStandardMaterial({
          map: texture
 　　　　　});
 
-        for (let i = 0; i < 2000; i++) {
+        for (let i = 0; i < 6000; i++) {
           const mesh = new THREE.Mesh(geometry, material);
           mesh.position.x = (Math.random() - 0.5) * 3000;
           mesh.position.y = (Math.random() - 0.5) * 3000;
