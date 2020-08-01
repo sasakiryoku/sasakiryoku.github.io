@@ -33,18 +33,18 @@
         // グループを作成
         const group = new THREE.Group();
         scene.add(group);
-        const geometry = new THREE.SphereGeometry(20, 20, 20);
+        const geometry = new THREE.SphereGeometry(30, 5, 30);
         const loader = new THREE.TextureLoader();
 　　　　  const texture = loader.load('snow.jpg');
         const material = new THREE.MeshStandardMaterial({
          map: texture
 　　　　　});
 
-        for (let i = 0; i < 6000; i++) {
+        for (let i = 0; i < 2000; i++) {
           const mesh = new THREE.Mesh(geometry, material);
-          mesh.position.x = (Math.random() - 0.5) * 3000;
-          mesh.position.y = (Math.random() - 0.5) * 3000;
-          mesh.position.z = (Math.random() - 0.5) * 3000;
+          mesh.position.x = (Math.random() - 0.5) * 2000;
+          mesh.position.y = (Math.random() - 0.5) * 2000;
+          mesh.position.z = (Math.random() - 0.5) * 2000;
           mesh.rotation.x = Math.random() * 2 * Math.PI;
           mesh.rotation.y = Math.random() * 2 * Math.PI;
           mesh.rotation.z = Math.random() * 2 * Math.PI;
